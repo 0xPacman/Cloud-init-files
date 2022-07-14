@@ -1,0 +1,13 @@
+#cloud-config tests
+users:
+  - name: controller
+    ssh-authorized-keys:
+      # - ssh-rsa AAAA Pacman@Pacman-PC
+  - shell: /bin/bash
+apt_upgrade: true
+package:
+  - zsh
+
+runcmd:
+  - echo "cloud-init test" > /home/controller/ci-test
+  - apt install nodejs -y
